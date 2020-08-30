@@ -60,6 +60,17 @@ static void MakeAndSendCANFrame(void)
     uint8_t size = 0;
     fra.can_id = 0x100;
     fra.can_dlc = 8;
+
+    /* Not used  - fra.data[] currently not set to anything */
+    //fra.data[0] = 0x00;
+    //fra.data[1] = 0x01;
+    //fra.data[2] = 0x02;
+    //fra.data[3] = 0x03;
+    //fra.data[4] = 0x04;
+    //fra.data[5] = 0x05;
+    //fra.data[6] = 0x06;
+    //fra.data[7] = 0x07;
+
     size = send(can_fd, &fra, sizeof(struct can_frame), MSG_DONTWAIT);
     if(size != sizeof(struct can_frame))
     {
