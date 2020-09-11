@@ -156,6 +156,8 @@ static uint8_t CANIfcInit(void)
         printf("Unable to bind socket, quitting\n");
         return FAILURE;
     }
+
+    return SUCCESS;
 }
 
 /************************************************************
